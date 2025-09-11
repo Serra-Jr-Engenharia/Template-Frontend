@@ -31,14 +31,13 @@ export default function Header() {
   }
 
   return (
-    <header className={`bg-[#001830] text-white transform transition-transform duration-750 ease-in-out
-      ${showHeader ? "translate-y-0" : "-translate-y-full"}`}>
-      <div className="mx-auto px-4 sm:px-6 lg:px-8">
+    <header className="bg-background border-b border-border sticky top-0 z-50">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
+          <div className="flex-shrink-0">
             <Link href="/" className="flex items-center space-x-2">
-              <img src="/./././LogoENome.svg" alt="Logo Serra Jr." className="w-[110px]" />
+              <span className="text-xl font-bold text-foreground">Serra Jr.</span>
             </Link>
           </div>
 
