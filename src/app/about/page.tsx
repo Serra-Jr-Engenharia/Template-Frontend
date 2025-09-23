@@ -1,36 +1,75 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Users, Target, Award, BookOpen, Lightbulb, Heart } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Users, Target, Lightbulb, Heart, Zap, Star, TrendingUp } from "lucide-react"
+import Link from "next/link"
 
 export default function SobrePage() {
   const teamMembers = [
     {
-      name: "Ana Silva",
-      role: "Diretora Presidente",
-      course: "Engenharia Civil - 8º semestre",
-      image: "/fotosDefault.jpg",
-      skills: ["Gestão", "Estruturas", "Liderança"],
+      name: "Gabrielle Oliveira",
+      role: "Diretora Computação",
+      skills: ["Inovação", "Estruturas", "Liderança"],
     },
     {
-      name: "Carlos Santos",
-      role: "Diretor de Projetos",
-      course: "Engenharia Mecânica - 7º semestre",
-      image: "/fotosDefault.jpg",
-      skills: ["CAD", "Análise", "Projetos"],
+      name: "André Silva",
+      role: "Assessor de Computação",
+      course: "Engenharia de Computação",
+      skills: ["Inovação", "Estruturas", "Liderança"],
     },
     {
-      name: "Marina Costa",
-      role: "Diretora Comercial",
-      course: "Engenharia de Produção - 6º semestre",
-      image: "/fotosDefault.jpg",
-      skills: ["Vendas", "Marketing", "Relacionamento"],
+      name: "Antônio",
+      role: "Assessor de Computação",
+      course: "Engenharia de Computação",
+      skills: ["Inovação", "Estruturas", "Liderança"],
     },
     {
-      name: "Pedro Oliveira",
-      role: "Diretor Técnico",
-      course: "Engenharia Elétrica - 8º semestre",
-      image: "/fotosDefault.jpg",
-      skills: ["Automação", "Sistemas", "Inovação"],
+      name: "Carolina Dornellas",
+      role: "Assessor de Computação", 
+      course: "Engenharia de Computação",
+      skills: ["Inovação", "Estruturas", "Liderança"],
+    },
+    {
+      name: "Felipe Carrancho",
+      role: "Assessor de Computação",
+      course: "Engenharia de Computação",
+      skills: ["Inovação", "Estruturas", "Liderança"],
+    },
+    {
+      name: "Gabriel Gonçalves",
+      role: "Assessor de Computação",
+      course: "Engenharia de Computação",
+      skills: ["Inovação", "Estruturas", "Liderança"],
+    },
+    {
+      name: "Gustavo Curty",
+      role: "Assessor de Computação",
+      course: "Engenharia de Computação",
+      skills: ["Inovação", "Estruturas", "Liderança"],
+    },
+    {
+      name: "João Victor",
+      role: "Assessor de Computação",
+      course: "Engenharia de Computação",
+      skills: ["Inovação", "Estruturas", "Liderança"],
+    },
+    {
+      name: "Victor Hugo",
+      role: "Assessor de Computação",
+      course: "Engenharia de Computação", 
+      skills: ["Inovação", "Estruturas", "Liderança"],
+    },
+    {
+      name: "Luís Felipe Braido",
+      role: "Assessor de Computação",
+      course: "Engenharia de Computação",
+      skills: ["Sistemas", "Programação", "Gestão"],
+    },
+    {
+      name: "Paulo Emanuel",
+      role: "Assessor de Computação",
+      course: "Engenharia de Computação",
+      skills: ["Tecnologia", "Inovação", "Projetos"],
     },
   ]
 
@@ -38,111 +77,96 @@ export default function SobrePage() {
     {
       icon: Target,
       title: "Excelência",
-      description: "Buscamos sempre a mais alta qualidade em nossos projetos e serviços.",
+      description: "Alta qualidade em nossos projetos e serviços.",
     },
     {
       icon: Lightbulb,
       title: "Inovação",
-      description: "Aplicamos tecnologias modernas e soluções criativas em cada projeto.",
+      description: "Soluções criativas e tecnologias modernas.",
     },
     {
       icon: Heart,
       title: "Compromisso",
-      description: "Dedicação total aos nossos clientes e aos prazos estabelecidos.",
+      description: "Dedicação total aos clientes e prazos.",
     },
     {
-      icon: BookOpen,
-      title: "Aprendizado",
-      description: "Crescimento contínuo através da experiência prática e conhecimento acadêmico.",
+      icon: Users,
+      title: "Equipe",
+      description: "Trabalho colaborativo e desenvolvimento contínuo.",
     },
   ]
 
+  const stats = [
+    { value: "50+", label: "Projetos Concluídos", icon: Zap },
+    { value: "98%", label: "Satisfação", icon: Star },
+    { value: "15+", label: "Áreas de Atuação", icon: Target },
+    { value: "3 anos", label: "Experiência", icon: TrendingUp },
+  ]
+
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 ">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-background to-muted py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance">
-              Sobre a <span className="text-primary">Serra Jr.</span>
-            </h1>
-            <p className="text-xl text-muted-foreground mb-8 text-pretty leading-relaxed">
-              Somos uma empresa júnior de engenharia formada por estudantes apaixonados por transformar conhecimento
-              acadêmico em soluções práticas e inovadoras.
-            </p>
+      <section className="py-26">
+        <div className="container mx-auto px-4 text-center">
+          <Badge className="mb-4 bg-blue-500 text-white">
+            Empresa Júnior de Engenharia 
+          </Badge>
+          
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Sobre a <span className="text-blue-400">Serra Jr.</span>
+          </h1>
+          
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+            Transformamos conhecimento acadêmico em soluções práticas e inovadoras para o mercado.
+          </p>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-12 bg-gray-800/50">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            {stats.map((stat, index) => (
+              <div key={index} className="space-y-2">
+                <div className="text-2xl md:text-3xl font-bold text-blue-400">
+                  {stat.value}
+                </div>
+                <div className="text-gray-300 text-sm">{stat.label}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Mission Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Nossa Missão</h2>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Conectar o conhecimento acadêmico com as necessidades do mercado, oferecendo soluções em engenharia de
-                alta qualidade a preços acessíveis, enquanto desenvolvemos as competências profissionais de nossos
-                membros.
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <Card className="border-l-4 border-l-primary">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-lg flex items-center">
-                      <Users className="h-5 w-5 text-primary mr-2" />
-                      50+ Projetos
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">Entregues com sucesso</p>
-                  </CardContent>
-                </Card>
-                <Card className="border-l-4 border-l-primary">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-lg flex items-center">
-                      <Award className="h-5 w-5 text-primary mr-2" />3 Anos
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">De experiência no mercado</p>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="aspect-square bg-muted rounded-2xl overflow-hidden">
-                <img
-                  src="/fotosDefault.jpg"
-                  alt="Equipe da Serra Jr. trabalhando em projetos"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-white mb-6">Nossa Missão</h2>
+            <p className="text-gray-300 text-lg leading-relaxed">
+              Conectar o conhecimento acadêmico com as necessidades do mercado, oferecendo soluções 
+              em engenharia de alta qualidade enquanto desenvolvemos nossos membros.
+            </p>
           </div>
         </div>
       </section>
 
       {/* Values Section */}
-      <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Nossos Valores</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-              Os princípios que guiam nosso trabalho e definem nossa cultura organizacional
-            </p>
-          </div>
-
+      <section className="py-16 bg-gray-800/50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-white text-center mb-12">Nossos Valores</h2>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300">
+              <Card key={index} className="text-center bg-gray-800/30 border-gray-700">
                 <CardHeader>
-                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <value.icon className="h-8 w-8 text-primary" />
+                  <div className="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <value.icon className="h-6 w-6 text-blue-400" />
                   </div>
-                  <CardTitle className="text-xl">{value.title}</CardTitle>
+                  <CardTitle className="text-white">{value.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{value.description}</p>
+                  <p className="text-gray-300 text-sm">{value.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -151,34 +175,24 @@ export default function SobrePage() {
       </section>
 
       {/* Team Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Nossa Equipe</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-              Conheça os profissionais dedicados que fazem a diferença em cada projeto
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-white text-center mb-12">Nosso Time de Computação</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {teamMembers.map((member, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300">
+              <Card key={index} className="text-center bg-gray-800/30 border-gray-700">
                 <CardHeader>
-                  <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden bg-muted">
-                    <img
-                      src={member.image || "/placeholder.svg"}
-                      alt={member.name}
-                      className="w-full h-full object-cover"
-                    />
+                  <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gray-700 flex items-center justify-center">
+                    <Users className="h-8 w-8 text-blue-400" />
                   </div>
-                  <CardTitle className="text-xl">{member.name}</CardTitle>
-                  <CardDescription className="text-primary font-medium">{member.role}</CardDescription>
-                  <p className="text-sm text-muted-foreground mt-2">{member.course}</p>
+                  <CardTitle className="text-white text-lg">{member.name}</CardTitle>
+                  <p className="text-blue-400 text-sm font-medium">{member.role}</p>
                 </CardHeader>
                 <CardContent>
-                  <div className="flex flex-wrap gap-2 justify-center">
+                  <div className="flex flex-wrap gap-1 justify-center">
                     {member.skills.map((skill, skillIndex) => (
-                      <Badge key={skillIndex} variant="secondary" className="text-xs">
+                      <Badge key={skillIndex} variant="secondary" className="text-xs bg-blue-500/20 text-blue-300">
                         {skill}
                       </Badge>
                     ))}
@@ -186,66 +200,6 @@ export default function SobrePage() {
                 </CardContent>
               </Card>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* History Section */}
-      <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Nossa História</h2>
-              <p className="text-lg text-muted-foreground text-pretty">
-                A trajetória de crescimento e conquistas da Serra Jr. Engenharia
-              </p>
-            </div>
-
-            <div className="space-y-8">
-              <div className="flex items-start space-x-4">
-                <div className="w-4 h-4 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                <div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">2021 - Fundação</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    A Serra Jr. foi fundada por um grupo de estudantes de engenharia com o objetivo de aplicar
-                    conhecimentos acadêmicos em projetos reais, oferecendo soluções acessíveis ao mercado.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <div className="w-4 h-4 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                <div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">2022 - Primeiros Projetos</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Executamos nossos primeiros projetos de consultoria técnica e análise estrutural, estabelecendo
-                    nossa reputação no mercado local.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <div className="w-4 h-4 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                <div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">2023 - Expansão</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Ampliamos nossa equipe e diversificamos nossos serviços, incluindo projetos de automação e
-                    acompanhamento de obras.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <div className="w-4 h-4 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                <div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">2024 - Consolidação</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Hoje somos reconhecidos como uma das principais empresas juniores de engenharia da região, com mais
-                    de 50 projetos entregues e uma equipe altamente qualificada.
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
