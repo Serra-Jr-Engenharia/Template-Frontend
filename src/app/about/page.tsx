@@ -8,11 +8,12 @@ export default function SobrePage() {
   const teamMembers = [
     {
       name: "Gabrielle Oliveira",
-      role: "Diretora Computação",
+      role: "Diretora de Computação",
+      course: "Engenharia de Computação",
       skills: ["Inovação", "Estruturas", "Liderança"],
     },
     {
-      name: "André Silva",
+      name: "André",
       role: "Assessor de Computação",
       course: "Engenharia de Computação",
       skills: ["Inovação", "Estruturas", "Liderança"],
@@ -24,8 +25,8 @@ export default function SobrePage() {
       skills: ["Inovação", "Estruturas", "Liderança"],
     },
     {
-      name: "Carolina Dornellas",
-      role: "Assessor de Computação", 
+      name: "Carolina Dornelas",
+      role: "Assessor de Computação",
       course: "Engenharia de Computação",
       skills: ["Inovação", "Estruturas", "Liderança"],
     },
@@ -56,7 +57,7 @@ export default function SobrePage() {
     {
       name: "Victor Hugo",
       role: "Assessor de Computação",
-      course: "Engenharia de Computação", 
+      course: "Engenharia de Computação",
       skills: ["Inovação", "Estruturas", "Liderança"],
     },
     {
@@ -71,7 +72,7 @@ export default function SobrePage() {
       course: "Engenharia de Computação",
       skills: ["Tecnologia", "Inovação", "Projetos"],
     },
-  ]
+  ];
 
   const values = [
     {
